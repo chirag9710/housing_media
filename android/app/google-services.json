@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1054207362201",
+    "project_id": "housing-media",
+    "storage_bucket": "housing-media.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054207362201:android:cf35fda7377bea9810e408",
+        "android_client_info": {
+          "package_name": "com.app.housing_media"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054207362201-bv8uje54kljd641725mhjjhpq2ak7cm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.housing_media",
+            "certificate_hash": "c095ba449f6559e02680cfb98f71e5f4fac8e894"
+          }
+        },
+        {
+          "client_id": "1054207362201-hcd21an6rdploimgullo95lmi5asp1gf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx0e8oIBD0GwTxU9CKTN1GPmfquQ3en0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054207362201-hcd21an6rdploimgullo95lmi5asp1gf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
