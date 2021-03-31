@@ -31,6 +31,8 @@ dependencies:
   google_sign_in: ^5.0.1
   http: ^0.13.0
   shared_preferences: ^2.0.5
+  sqflite: ^2.0.0+3
+  path_provider: ^2.0.1
 
 dev_dependencies:
   flutter_test:

@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:housing_media/RegisterActivity/DBProvider.dart';
+import 'package:housing_media/RegisterActivity/Register.dart';
 import 'package:housing_media/intro/FirstIntro.dart';
 import 'package:housing_media/widgets/Pelette.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -46,21 +48,29 @@ class _MyLoginState extends State<MyLogin> {
   // String dToken;
 
   GoogleSignInAccount? _currentUser;
-
+  final dbHelper = DatabaseHelper.instance;
   @override
   void initState() {
     super.initState();
     _checkIsLogin();
-    googleSignIn.onCurrentUserChanged.listen((GoogleSignInAccount? account) {
-      setState(() {
-        _currentUser = account;
-      });
-      if (_currentUser != null) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassword()));
-      }
-    });
-    googleSignIn.signInSilently();
+    // googleSignIn.onCurrentUserChanged.listen((GoogleSignInAccount? account) {
+    //   setState(() {
+    //     _currentUser = account;
+    //   });
+    //   if (_currentUser != null) {
+    //     Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassword()));
+    //   }
+    // });
+    // googleSignIn.signInSilently();
     // getToken();
+
+    print("Row ${dbHelper.select("ck@gmail.com")}");
+    getData();
+  }
+
+  getData() async{
+    final data = await dbHelper.select("ck@gmail.com");
+    print(data[0]);
   }
   // getToken() async {
   //   String token = await _firebaseMessaging.getToken();
@@ -249,9 +259,9 @@ class _MyLoginState extends State<MyLogin> {
                                 fontWeight: FontWeight.w500),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    // Navigator.push(context, MaterialPageRoute(
-                                    //     builder: (context) => Register()
-                                    // ));
+                                    Navigator.push(context, MaterialPageRoute(
+                                        builder: (context) => Register()
+                                    ));
                                   }
                             )
                           ]
